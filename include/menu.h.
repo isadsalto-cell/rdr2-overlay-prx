@@ -1,0 +1,22 @@
+
+#ifndef MENU_H
+#define MENU_H
+
+#include <stdbool.h>
+
+#define TAB_COUNT 8
+
+typedef struct {
+    const char *name;
+    const char *description;
+} MenuTab;
+
+extern MenuTab tabs[TAB_COUNT];
+extern int selectedTab;
+extern bool overlayVisible;
+
+void drawOverlay(void);
+void navigateMenu(int direction);
+void toggleOverlay(void);
+
+#endif
