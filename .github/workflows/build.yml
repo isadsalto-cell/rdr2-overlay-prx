@@ -1,0 +1,21 @@
+name: RDR2 Overlay Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download source
+        uses: actions/checkout@v4
+
+      - name: Check source files
+        run: |
+          echo "RDR2 Overlay Project"
+          ls -la src
+          test -f src/main.c
+
+      - name: Build status
+        run: echo "Source check successful"
